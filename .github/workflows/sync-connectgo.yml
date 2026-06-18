@@ -1,0 +1,35 @@
+name: Sync connectgo
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout landing page repo
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.PAT_TOKEN }}
+          path: main
+
+      - name: Clone connectgo repo
+        run: git clone https://github.com/ar613x/ar613x.github.io.git connectgo-source
+
+      - name: Copy files into connectgo folder
+        run: |
+          rm -rf main/connectgo
+          mkdir -p main/connectgo
+          rsync -av --exclude='.git' connectgo-source/ main/connectgo/
+
+      - name: Commit and push if changed
+        run: |
+          cd main
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add .
+          git diff --staged --quiet || git commit -m "Sync connectgo [auto]"
+          git push
