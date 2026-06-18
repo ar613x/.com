@@ -1,0 +1,95 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    touch-action: manipulation;
+}
+
+h2 {
+    margin-left: 10px;
+}
+
+ul {
+    padding-left: 40px;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(19, 30px);
+    grid-template-rows: repeat(19, 30px);
+    background-image: url('cogboard.png');
+    background-size: cover;
+}
+
+.cell {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+
+.last-move {
+    background: #34cceb;
+}
+
+.stone {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#turnmarkercontainer {
+    margin-bottom: 15px;
+    text-align: center;
+}
+#turnmarker {
+    font-family: monospace;
+    font-size: 18px;
+    padding: 4px;
+    border-radius: 4px;
+}
+
+.black {
+    background: radial-gradient(black, rgb(75, 75, 75));
+    border: 1px solid red;
+}
+
+.white {
+    background: radial-gradient(white, rgb(205, 205, 205));
+    border: 1px solid black;
+}
+/* these will be used for 4 player */
+
+.red {
+    background: radial-gradient(red, rgb(205, 0, 0));
+    border: 1px solid blue;
+}
+
+.blue {
+    background: radial-gradient(blue, rgb(0, 0, 205));
+    border: 1px solid white;
+}
+
+/* Center squares outline */
+.center-top {
+    border-top: 3px solid greenyellow !important;
+}
+
+.center-bottom {
+    border-bottom: 3px solid greenyellow !important;
+}
+
+.center-left {
+    border-left: 3px solid greenyellow !important;
+}
+
+.center-right {
+    border-right: 3px solid greenyellow !important;
+}
