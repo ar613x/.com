@@ -97,17 +97,17 @@ ul {
 @media (max-width: 1000px) {
 
     body {
-        padding: 10px;
-        font-size: 40px;
+        padding: 25px;
+        font-size: 25px;
     }
     
     #board {
         display: grid;
-        width: 100%;
+        width: 90%;
         grid-template-columns: repeat(19, 1fr);
         grid-template-rows: auto;
         aspect-ratio: 1;
-        --cell-size: calc(100% / 19);
+        --cell-size: calc(90% / 19);
     }
     
     .cell {
@@ -122,13 +122,13 @@ ul {
     }
 
     #turnmarker {
-        font-size: 70px;
+        font-size: 40px;
         padding: 10px;
         border-radius: 5px;
     }
 
     button {
-        font-size: 60px;
+        font-size: 30px;
     }
     
 }
