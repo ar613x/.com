@@ -96,7 +96,6 @@ for (let row = 0; row < 19; row++) {
                 victory = true;
             }
             updateTurnMarker(victory ? 1-sturn : sturn,victory);
-             if (!victory) Array.from(board.children).forEach(c => c.dispatchEvent(new CustomEvent("switchColor",{bubbles:false})));
         });
         board.appendChild(cell);
     }
