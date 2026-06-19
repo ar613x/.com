@@ -6,3 +6,12 @@ html, body {
 a {
     color: #D793DA;
             }
+.date {
+    color: #9398da;
+    size: 0.8em;
+    }
+.scrollable {
+  height: 400px;
+  overflow-y: auto;
+  overflow-x: hidden; 
+}
