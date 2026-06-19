@@ -93,3 +93,42 @@ ul {
 .center-right {
     border-right: 3px solid greenyellow !important;
 }
+
+@media (max-width: 1000px) {
+
+    body {
+        padding: 10px;
+        font-size: 40px;
+    }
+    
+    #board {
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(19, 1fr);
+        grid-template-rows: auto;
+        aspect-ratio: 1;
+        --cell-size: calc(100% / 19);
+    }
+    
+    .cell {
+        width: auto;
+        height: auto;
+        aspect-ratio: 1;
+    }
+    
+    .stone {
+        width: calc(var(--cell-size) * 0.8);
+        height: calc(var(--cell-size) * 0.8);
+    }
+
+    #turnmarker {
+        font-size: 70px;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    button {
+        font-size: 60px;
+    }
+    
+}
