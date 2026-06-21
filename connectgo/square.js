@@ -113,9 +113,6 @@ class Square {
         }
         return n;
     }
-    surrounded(cells) {
-        return this.sames(this.neighbors(cells,false,true,true,false),true).length == 4;
-    }
 }
 function clone(arr) {
     let newArr = arr.map(row =>
