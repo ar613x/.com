@@ -2,7 +2,7 @@ import {Square, cellsUpdate} from "./square.js";
 const board = document.getElementById("board");
 
 let lastCell = null;
-
+let sidePicker = document.getElementById("side-picker");
 function markLastMove(cell) {
     if (lastCell) {
         lastCell.classList.remove("last-move");
@@ -11,6 +11,11 @@ function markLastMove(cell) {
     cell.classList.add("last-move");
     lastCell = cell;
 }
+document.addEventListener("keypress", (e) => {
+    if (e.key === "Space" || e.code === "Space") {
+        sidePicker.value = sidePicker.value == "black" ? "white" : "black";
+    }
+});
 let cells = [];
 for (let row = 0; row < 19; row++) {
     cells[row] = [];
@@ -46,6 +51,7 @@ for (let row = 0; row < 19; row++) {
         cell.addEventListener("click", () => {
             const stone = cell.querySelector(".stone");
             const square = cells[row][col];
+            const col = sidePicker.value;
             if (stone) {
                 stone.remove();
                 square.setColor(0,false);
@@ -58,24 +64,9 @@ for (let row = 0; row < 19; row++) {
             }
 
             const s = document.createElement("div");
-            square.setColor(1,false);
+            square.setColor(col === "black" ? 1 : 2,false);
             cellsUpdate(cells,square);
-            s.className = "stone black";
-            cell.appendChild(s);
-
-            markLastMove(cell);
-        });
-
-        // Right click = white stone
-        cell.addEventListener("contextmenu", (ev) => {
-            ev.preventDefault();
-            const square = cells[row][col];
-            if (cell.querySelector(".stone")) return;
-
-            const s = document.createElement("div");
-            square.setColor(2,false);
-            cellsUpdate(cells,square);
-            s.className = "stone white";
+            s.className = `stone ${col}`;
             cell.appendChild(s);
 
             markLastMove(cell);

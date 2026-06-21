@@ -1,4 +1,3 @@
-// Random things that we don't want to define twice (mainly square class)
 class Square {
     constructor(x, y, occ, b) {
         this.x = x;
@@ -6,7 +5,7 @@ class Square {
         this.occ = occ;
         this.b = b;
     }
-    setColor(c,g=true) {
+    setColor(c) {
         switch (c) {
             case 0:
                 this.occ = false;
@@ -21,17 +20,15 @@ class Square {
                 this.b = false;
                 break;
         }
-        if (g) {
-            let event = new CustomEvent('updateCell', {
-                bubbles: true,
-                detail: {
-                    id: `${this.y},${this.x}`,
-                    color: c,
-                    cell: this
-                }
-            });
-            document.dispatchEvent(event);
-        }
+        let event = new CustomEvent('updateCell', {
+            bubbles: true,
+            detail: {
+                id: `${this.y},${this.x}`,
+                color: c,
+                cell: this
+            }
+        });
+        document.dispatchEvent(event);
     }
     flip() {
         if (this.occ) {
@@ -164,21 +161,6 @@ function turnFlipCheck(cells) {
     }
     for (let i of flips) {
         i.flip();
-    }
-    afterTurnRemoveCheck(cells,cols);
-}
-function afterTurnRemoveCheck(cells,cols) {
-    let groups = allGroups(cells);
-    let removes = [];
-    for (let i of groups) {
-        if (groupSurrounded(cells,i) && groupColor(i) === cols[groups.indexOf(i)]) {
-            for (let j of i) {
-                removes.push(j);
-            }
-        }
-    }
-    for (let i of removes) {
-        i.setColor(0);
     }
 }
 function win(cells,cell) {
