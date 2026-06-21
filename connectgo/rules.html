@@ -13,7 +13,7 @@
         <br>
         <ul>
             <li>Players take turns placing pieces on the board.</li>
-            <li>The player who has 5 pieces on the board first wins.</li>
+            <li>The player who has 5 pieces on the board in a row (horizontal, vertical, or diagonal) first wins.</li>
             <li>If a piece or group of pieces of the same color is surrounded by the opponent's pieces,<br>they get replaced by the opponent's pieces.</li>
         </ul>
         <br><br>
@@ -21,6 +21,7 @@
         <br>
         <ul>
             <li>The game is played on a regular full-sized Go board (19x19).</li><img src="images/image1.png">
+            <li>Note that for online play, there is a center 7x7 and 3x3 outline -- this is purely for orientation, and the 7x7 may be used in examples of patterns & tactics.</li>
             <li>One player has black pieces, and the other has white pieces. All pieces are round.</li>
             <li>Pieces are played inside the squares on the board, as shown.</li><img src="images/image2.png"><br>If playing in person, use the lines of a Go board instead of the squares.
         </ul>
@@ -33,14 +34,13 @@
         <ul>
             <li>To surround a singular piece, each square <i>next to</i> the piece must be occupied by the<br>opponent's pieces.</li>
             <li><i>Next to</i> is defined as being on a game square orthogonally adjacent. Diagonally adjacent<br>spaces are not <i>next to</i>.</li><img src="images/image5.png">
-            <li>A <i>group</i> is a set of pieces such that all pieces in the group are next to at least one other<br>piece in the group contiguously.</li>
-            <li>Contiguously means that a group cannot be divided into two groups such that there is no<br>pair of pieces from each subgroup that are not next to each other.</li><img src="images/image3.png">
+            <li>A group is a set of pieces connected in a continuous chain (orthogonally). If a set of pieces is split or separated, it forms multiple groups.</li><img src="images/image3.png">
             <li>To surround a group, each piece in the group must be surrounded by pieces that either<br>belong to the opponent or to the group.</li><img src="images/image4.png"><br><span style="font-size: 10px;">* Note: in the second figure, black's group (highlighted yellow) is not surrounded yet,<br>but may be surrounded in one move if black does not surround white's pieces (also<br>highlighted yellow) on the next turn.</span>
         </ul>
         <br><br>
         <h2>Other Rules</h2>
         <ul>
-            <li>Black goes first.</li>
+            <li>Black goes first, then turns alternate.</li>
             <li>When a group or piece is surrounded by opponent pieces at any time, they are<br>automatically switched out for the opponent's color pieces. This does not use either<br>players' turn.</li>
             <li>5-in-a-row can be made horizontally, vertically, or diagonally.</li>
             <li>If the switching colors of a surrounded group causes either player to gain a 5-in-a-row,<br>the player that got the 5-in-a-row wins immediately.</li>
