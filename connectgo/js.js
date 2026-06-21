@@ -51,7 +51,7 @@ for (let row = 0; row < 19; row++) {
         cell.addEventListener("click", () => {
             const stone = cell.querySelector(".stone");
             const square = cells[row][col];
-            const col = sidePicker.value;
+            const color = sidePicker.value;
             if (stone) {
                 stone.remove();
                 square.setColor(0,false);
@@ -64,9 +64,9 @@ for (let row = 0; row < 19; row++) {
             }
 
             const s = document.createElement("div");
-            square.setColor(col === "black" ? 1 : 2,false);
+            square.setColor(color === "black" ? 1 : 2,false);
             cellsUpdate(cells,square);
-            s.className = `stone ${col}`;
+            s.className = `stone ${color}`;
             cell.appendChild(s);
 
             markLastMove(cell);
