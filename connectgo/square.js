@@ -116,7 +116,7 @@ class Square {
 }
 function clone(arr) {
     let newArr = arr.map(row =>
-    row.map(c => c ? new Square(c.x, c.y, c.occ, c.b) : null)
+    row.map(c => c ? c : null)
     );
     return newArr;
 }
@@ -191,7 +191,4 @@ function turnCheck(cells) {
     }
     return false;
 }
-function cellsUpdate(cells,cell) {
-    cells[cell.y][cell.x] = cell;
-}
-export { Square, turnCheck, cellsUpdate };
+export { Square, turnCheck };
