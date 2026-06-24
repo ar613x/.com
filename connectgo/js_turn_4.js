@@ -2,13 +2,19 @@ import {Square, turnCheck, cellsUpdate, makeAlliance, alliances} from "./square4
 // import {Piece, flipPieces} from "./piece.js";
 const board = document.getElementById("board");
 const colors = ["black", "white", "red", "blue"];
+const textBorderThings = new Map([
+    ["black","red"],
+    ["white","black"],
+    ["red","blue"],
+    ["blue","white"]
+])
 let lastCell = null;
 let sturn = 0; // 0 = black, 1 = red 2 = white 3 = blue
 function updateTurnMarker(turn,v=false) {
     let turnMarker = document.getElementById('turnmarker');
     let c = colors[sturn];
     turnMarker.innerHTML =
-        `<span style='color:${sturn%2==0 ? colors[sturn+1] : colors[sturn-1]};background:${c};padding:4px;border:1px solid ${sturn%2==0 ? colors[sturn+1] : colors[sturn-1]};font:monospace;'>${c.charAt(0).toUpperCase()+c.slice(1)}'s ${v ? "victory" : "turn"}</span>`;
+        `<span style='color:${textBorderThings.get(c)};background:${c};padding:4px;border:1px solid ${textBorderThings.get(c)};font:monospace;'>${c.charAt(0).toUpperCase()+c.slice(1)}'s ${v ? "victory" : "turn"}</span>`;
 }
 function markLastMove(cell) {
     if (lastCell) {
