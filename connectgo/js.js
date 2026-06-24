@@ -1,4 +1,4 @@
-import {Square, cellsUpdate} from "./square.js";
+import {Square} from "./square.js";
 const board = document.getElementById("board");
 
 let lastCell = null;
@@ -65,7 +65,6 @@ for (let row = 0; row < 19; row++) {
 
             const s = document.createElement("div");
             square.setColor(color === "black" ? 1 : 2,false);
-            cellsUpdate(cells,square);
             s.className = `stone ${color}`;
             cell.appendChild(s);
 

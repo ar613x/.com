@@ -79,11 +79,12 @@ for (let row = 0; row < 19; row++) {
                 return;
             }
             square.setColor(sturn+1);
-            sturn = sturn === 3 ? 0 : sturn+1;
             markLastMove(cell);
             const win = turnCheck(cells);
             if (win) {
                 victory = true;
+            } else {
+                sturn = sturn === 3 ? 0 : sturn+1;
             }
             updateTurnMarker(victory ? (sturn - 1) % 4 : sturn % 4, victory);
         });
