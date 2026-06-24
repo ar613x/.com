@@ -1,25 +1,34 @@
 import {Square, turnCheck, cellsUpdate, makeAlliance, alliances} from "./square4.js";
 // import {Piece, flipPieces} from "./piece.js";
 const board = document.getElementById("board");
-
+const colorNames = ["", "black", "white", "red", "blue"];
+let turn = 0;
 let lastCell = null;
-let sturn = 0; // 0 = black, 1 = white
+let sturn = 0; // 0 = black, 1 = red 2 = white 3 = blue
 function updateTurnMarker(turn,v=false) {
     let turnMarker = document.getElementById('turnmarker')
     if (turn === 0) {
         turnMarker.innerHTML =
-            `<span style='color:white;background:black;padding:4px;font-family:monospace;'>Black's ${v ? "victory" : "turn"}</span>`;
+            `<span style='color:red;background:black;padding:4px;border:1px solid red;font-family:monospace;'>Black's ${v ? "victory" : "turn"}</span>`;
     } else if (turn === 1) {
         turnMarker.innerHTML =
-            `<span style='color:black;background:white;padding:4px;border:1px solid black;font:monospace;'>White's ${v ? "victory" : "turn"}</span>`;
+            `<span style='color:blue;background:red;padding:4px;border:1px solid blue;font-family:monospace;'>Red's ${v ? "victory" : "turn"}</span>`;
+    }
+    else if (turn === 2) {
+        turnMarker.innerHTML =
+            `<span style='color:black;background:white;padding:4px;border:1px solid black;font-family:monospace;'>White's ${v ? "victory" : "turn"}</span>`;
+    }
+    else if (turn === 3) {
+        turnMarker.innerHTML =
+            `<span style='color:white;background:blue;padding:4px;border:1px solid white;font-family:monospace;'>Blue's ${v ? "victory" : "turn"}</span>`;
     }
 }
 function markLastMove(cell) {
     if (lastCell) {
-        lastCell.classList.remove("last-move");
+        lastCell.classList.remove("last-move-4p");
     }
 
-    cell.classList.add("last-move");
+    cell.classList.add("last-move-4p");
     lastCell = cell;
 }
 
@@ -42,7 +51,7 @@ document.addEventListener("updateCell", (event) => {
         cell.appendChild(stone);
     }
 
-    stone.className = color === 1 ? "stone black" : "stone white";
+    stone.className = `stone ${colorNames[color]}`;
     cellsUpdate(cells,event.detail.cell);
 });
 let victory = false;
@@ -82,12 +91,20 @@ for (let row = 0; row < 19; row++) {
             if (stone || victory) {
                 return;
             }
-            if (sturn == 0) {
+            if (sturn % 4 == 0) {
                 square.setColor(1);
                 sturn += 1;
-            } else {
+            } else if (sturn % 4 == 1) {
                 square.setColor(2);
-                sturn -= 1;
+                sturn += 1;
+            }
+            else if (sturn % 4 == 2) {
+                square.setColor(3);
+                sturn += 1;
+            }
+            else if (sturn % 4 == 3) {
+                square.setColor(4);
+                sturn += 1
             }
             markLastMove(cell);
             const win = turnCheck(cells);
@@ -95,7 +112,11 @@ for (let row = 0; row < 19; row++) {
                 console.log(`Victory for ${sturn ? "black" : "white"}.`);
                 victory = true;
             }
-            updateTurnMarker(victory ? 1-sturn : sturn,victory);
+            else {
+                console.log(`Turn number ${sturn}. Next player: ${sturn % 4 == 0 ? "black" : sturn % 4 == 1 ? "red" : sturn % 4 == 2 ? "white" : "blue"}`);
+                victory = false;
+            }
+            updateTurnMarker(victory ? (sturn - 1) % 4 : sturn % 4, victory);
         });
         board.appendChild(cell);
     }

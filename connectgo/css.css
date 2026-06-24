@@ -33,7 +33,12 @@ ul {
 
 .last-move {
     background: #34cceb;
+
 }
+.last-move-4p {
+    background: #f16fd2;
+}
+
 
 .stone {
     width: 24px;
@@ -65,7 +70,7 @@ ul {
     background: radial-gradient(white, rgb(205, 205, 205));
     border: 1px solid black;
 }
-/* these will be used for 4 player */
+/* used for 4 player */
 
 .red {
     background: radial-gradient(red, rgb(205, 0, 0));
