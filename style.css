@@ -2,6 +2,7 @@ html, body {
     background: #440e44;
     color: white;
     font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
 }
 
 a {
@@ -24,9 +25,9 @@ a {
     flex-shrink: 0;      
     box-sizing: border-box;
     background: #852585;
-    font-size: 1em;
+    font-size: 30px;
     
 }
-.holder a {
+.hodler a {
     color: #219087;
 }
