@@ -24,5 +24,6 @@ a {
     flex-shrink: 0;      
     box-sizing: border-box;
     background: #852585;
+    font-size: 3em;
     
 }
