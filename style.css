@@ -24,6 +24,9 @@ a {
     flex-shrink: 0;      
     box-sizing: border-box;
     background: #852585;
-    font-size: 3em;
+    font-size: 1em;
     
+}
+.holder a {
+    color: #219087;
 }
