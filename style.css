@@ -2,16 +2,27 @@ html, body {
     background: #440e44;
     color: white;
     font-family: 'Courier New', Courier, monospace;
-        }
+}
+
 a {
     color: #D793DA;
-            }
+}
+
 .date {
     color: #9398da;
     size: 0.8em;
-    }
-.scrollable {
-  height: 400px;
-  overflow-y: auto;
-  overflow-x: hidden; 
+}
+
+.hodlerhodler {
+    display: flex;
+    gap: 15px;  
+}
+
+.hodler {
+    width: 300px;
+    height: 200px;
+    flex-shrink: 0;      
+    box-sizing: border-box;
+    background: #852585;
+    
 }
