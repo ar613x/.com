@@ -1,4 +1,5 @@
 let alliances = new Map([
+    [0,[]],
     [1,[1]],
     [2,[2]],
     [3,[3]],
@@ -58,13 +59,14 @@ class Square {
         return n.filter(i => i && i.col);
     }
     sames(n,di=false) {
+        let alliance = alliances.get(this.col) ?? [];
         for (let i = n.length - 1; i >= 0; i--) {
             if (!di) {
-                if (!alliances.get(i.col).includes(n[i].col)) {
+                if (!alliance.includes(n[i].col)) {
                     n.splice(i, 1);
                 }
             } else {
-                if (alliances.get(i.col).includes(n[i].col)) {
+                if (alliance.includes(n[i].col)) {
                     n.splice(i, 1);
                 }
             }
@@ -98,7 +100,7 @@ class Square {
 }
 function clone(arr) {
     let newArr = arr.map(row =>
-    row.map(c => c ? new Square(c.x, c.y, c.occ, c.b) : null)
+    row.map(c => c ? c : null)
     );
     return newArr;
 }
@@ -107,7 +109,7 @@ function allGroups(cells) {
     let newCells = clone(cells);
     for (let j of newCells) {
         for (let i of j) {
-            if (!i) {
+            if (!i || !i.col) {
                 continue;
             }
             groups.push(i.group(newCells));
@@ -116,7 +118,7 @@ function allGroups(cells) {
     return groups
 }
 function groupColor(group) {
-    return group[0].color;
+    return group[0].col;
 }
 function groupSurrounded(cells,group) {
     let newCol = groupColor(group);
@@ -124,9 +126,13 @@ function groupSurrounded(cells,group) {
         if (i.neighbors(cells,false,true,true,false).length !== 4-[i.x,18-i.x,i.y,18-i.y].filter(j => j === 18).length) {
             return [false];
         }
-        for (let j of i.neighbors) {
+        for (let j of i.neighbors(cells,false,true,true,false)) {
             if (j.color !== newCol) {
-                newCol = j.color;
+                if (newCol === i.col) {
+                    newCol = j.col;
+                } else {
+                    return [false];
+                }
             }
         }
     }
@@ -150,7 +156,7 @@ function turnFlipCheck(cells) {
 function win(cells,cell) {
     let w = false;
     for (let dir of ["h","v","d","d1"]) {
-        if (cell.winGroup(cells,dir).size >= 5) {
+        if (cell.winGroup(cells,dir).size >= 6) {
             w = true;
             break;
         }
