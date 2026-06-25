@@ -16,6 +16,8 @@ a {
 
 .goback {
     background: #4a83c0;
+    padding: 10px;
+    border: 1px solid #0f355e;
     color: white;
     position: absolute;
     top: 10px;
