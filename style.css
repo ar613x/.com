@@ -74,6 +74,12 @@ table.prjlegend, table.prjlegend th, table.prjlegend td {
     border: none;
 }
 
+img.prjlegend {
+    width: 12px;
+    height: 12px;
+    margin-right: 6px;
+}
+
 .color {
     display: inline-block;
     width: 12px;
