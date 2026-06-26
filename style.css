@@ -45,3 +45,6 @@ a {
 .old {
     background: #107218;
 }
+.old a {
+    color: #8ac3ff;
+}
