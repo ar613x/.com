@@ -57,6 +57,10 @@ a {
     background: #7a7a7a;
 }
 
+.standalone {
+    background: #e08d26;
+}
+
 table.prjlegend, table.prjlegend th, table.prjlegend td {
     border: none;
 }
@@ -73,3 +77,4 @@ table.prjlegend, table.prjlegend th, table.prjlegend td {
 .green  { background: #107218; }
 .blue   { background: #2a2f85; }
 .grey   { background: #7a7a7a; }
+.orange { background: #e08d26; }
