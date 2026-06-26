@@ -36,10 +36,19 @@ a {
     box-sizing: border-box;
     background: #852585;
     font-size: 30px;
-    
+    position: relative;
 }
 .hodler a {
     color: #4a83c0;
+}
+
+.hodler img.shape {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+
+    width: 32px;
+    height: 32px;
 }
 
 .old {
