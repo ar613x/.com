@@ -1,0 +1,33 @@
+Ali's 6 Features:
+embedded I-frames (locat.html)
+why is important? - can use for embedding websites for more functionality waow
+
+rotate 3d (products.html)
+why is important? - enhances visual appeal
+
+linear gradient (all of it)
+why is important? - improves aesthetics
+
+janky slideshows (product1.html, product2.html)
+why is important? - allows users to view multiple images in 1 spot w/o moving eyes, making the site better
+
+details and summary tag (contact.html) 
+why is important? - allows users to expand and collapse content, improving organization and user experience
+
+rock sliding in (faq.html)
+why is important? - makes the rocks look cool and rocks are the best let us all worship rock
+
+Srijan's 5 Features:
+modal (title.html)
+allow user to sign in cool
+
+header thing in nav (all)
+navigation but cooler
+
+loading bar (all)
+makes loading cooler
+
+keybind thing (also all)
+makes navigation even cooler
+
+accordion thing (all)
