@@ -48,3 +48,15 @@ a {
 .old a {
     color: #8ac3ff;
 }
+
+.finished {
+    background: #2a2f85;
+}
+
+.abandoned {
+    background: #7a7a7a;
+}
+
+table.prjlegend, table.prjlegend th, table.prjlegend td {
+    border: none;
+}
