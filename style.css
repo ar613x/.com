@@ -44,7 +44,7 @@ a {
 
 .hodler img.shape {
     position: absolute;
-    bottom: 10px;
+    top: 10px;
     right: 10px;
 
     width: 32px;
