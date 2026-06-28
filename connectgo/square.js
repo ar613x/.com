@@ -25,7 +25,6 @@ class Square {
             detail: {
                 id: `${this.y},${this.x}`,
                 color: c,
-                cell: this
             }
         });
         document.dispatchEvent(event);

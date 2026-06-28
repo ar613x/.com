@@ -5,6 +5,7 @@ let alliances = new Map([
     [3,[3]],
     [4,[4]]
 ]);
+window.alliances = alliances;
 function makeAlliance(all1,all2) {
     let all1S = new Set(all1);
     let all2S = new Set(all2);
@@ -19,6 +20,7 @@ function makeAlliance(all1,all2) {
             continue;
         }
     }
+    window.alliances = alliances;
 }
 class Square {
     constructor(x,y,col) {
@@ -29,11 +31,10 @@ class Square {
     setColor(newCol) {
         this.col = newCol;
         let event = new CustomEvent('updateCell',{
-            bubbles: true,
+            bubbles: false,
             detail: {
                 id: `${this.y},${this.x}`,
                 color: newCol,
-                cell: this
             }
         });
         document.dispatchEvent(event);
@@ -205,7 +206,4 @@ function turnCheck(cells) {
     }
     return false;
 }
-function cellsUpdate(cells,cell) {
-    cells[cell.y][cell.x] = cell;
-}
-export { Square, turnCheck, cellsUpdate, makeAlliance, alliances };
+export { Square, turnCheck, makeAlliance, alliances };
