@@ -13,8 +13,9 @@ let sturn = 0; // 0 = black, 1 = red 2 = white 3 = blue
 function updateTurnMarker(turn,v=false) {
     let turnMarker = document.getElementById('turnmarker');
     let c = colors[sturn];
+    let a = alliances.get(sturn).map((n) => colors[n-1]).map((m) => m.charAt(0).toUpperCase()+m.slice(1));
     turnMarker.innerHTML =
-        `<span style='color:${textBorderThings.get(c)};background:${c};padding:4px;border:1px solid ${textBorderThings.get(c)};font:monospace;'>${c.charAt(0).toUpperCase()+c.slice(1)}'s ${v ? "victory" : "turn"}</span>`;
+        `<span style='color:${textBorderThings.get(c)};background:${c};padding:4px;border:1px solid ${textBorderThings.get(c)};font:monospace;'>${v ? `${a.slice(0,-1).join(", ")+" and "+a.at(-1)}'s victory` : `${c.charAt(0).toUpperCase()+c.slice(1)}'s turn`}</span>`;
 }
 function markLastMove(cell) {
     if (lastCell) {
@@ -92,7 +93,7 @@ for (let row = 0; row < 19; row++) {
             } else {
                 sturn = sturn === 3 ? 0 : sturn+1;
             }
-            updateTurnMarker(victory ? (sturn - 1) % 4 : sturn % 4, victory);
+            updateTurnMarker(sturn, victory);
         });
         board.appendChild(cell);
     }

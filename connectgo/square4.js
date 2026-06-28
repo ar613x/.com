@@ -122,19 +122,40 @@ function groupColor(group) {
 }
 function groupSurrounded(cells,group) {
     let newCol = groupColor(group);
+    let colors = new Map();
+    let surroundAlliance = [];
     for (let i of group) {
         if (i.neighbors(cells,false,true,true,false).length !== 4-[i.x,18-i.x,i.y,18-i.y].filter(j => j === 18).length) {
             return [false];
         }
         for (let j of i.neighbors(cells,false,true,true,false)) {
-            if (j.color !== newCol) {
-                if (newCol === i.col) {
-                    newCol = j.col;
+            if (j.col !== newCol) {
+                if (!surroundAlliance.length) {
+                    surroundAlliance = alliances.get(j.col);
+                    colors.set(j.col,1);
+                } else if (surroundAlliance.includes(j.col)) {
+                    if (colors.has(j.col)) {
+                        colors.set(j.col,colors.get(j.col)+1);
+                    } else {
+                        colors.set(j.col,1);
+                    }
                 } else {
                     return [false];
                 }
             }
         }
+    }
+    let valueSorted = Array.from(colors.values()).sort((a,b) => b-a);
+    if (!valueSorted[0] === valueSorted[1]) {
+        for (let [i,o] of colors) {
+            if (o===valueSorted[0]) newCol=i;
+        }
+    } else {
+        let cols = [];
+        for (let [i,o] of colors) {
+            if (o===valueSorted[0]) cols.push(i);
+        }
+        newCol = Math.max(cols);
     }
     return [true,newCol];
 }
