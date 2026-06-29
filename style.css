@@ -9,15 +9,26 @@ a {
     color: #D793DA;
 }
 
+.logo {
+    width: 100%;
+    max-width: 400px;
+    display: block;
+    margin: 0 auto;
+}
+
 .date {
     color: #9398da;
     font-size: 2em;
 }
 
 img {
-    max-width: 100%;
-    height: auto;
-    display: block;
+  max-width: 100%
+}
+
+@media (min-width: 768px) {
+  img {
+    width: 700px
+  }
 }
 
 .goback {
@@ -73,6 +84,10 @@ img {
 
 .standalone {
     background: #e08d26;
+}
+
+.hiatus {
+    background: #e0e026;
 }
 
 table.prjlegend, table.prjlegend th, table.prjlegend td {
