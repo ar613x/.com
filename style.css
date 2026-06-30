@@ -78,6 +78,11 @@ img {
 
 .hiatus {
     background: #e0e026;
+    color: #000000;
+}
+
+hiatus a {
+    color: #4C83BF;
 }
 
 table.prjlegend, table.prjlegend th, table.prjlegend td {
