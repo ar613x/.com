@@ -16,8 +16,8 @@ let lastCell = null;
 let sturn = 0; // 0 = black, 1 = red 2 = white 3 = blue
 function updateTurnMarker(turn,v=false) {
     let turnMarker = document.getElementById('turnmarker');
-    let c = colors[sturn];
-    let a = alliances.get(sturn).map((n) => colors[n-1]).map((m) => m.charAt(0).toUpperCase()+m.slice(1));
+    let c = colors[turn];
+    let a = alliances.get(turn).map((n) => colors[n-1]).map((m) => m.charAt(0).toUpperCase()+m.slice(1));
     turnMarker.innerHTML =
         `<span style='color:${textBorderThings.get(c)};background:${c};padding:4px;border:1px solid ${textBorderThings.get(c)};font:monospace;'>${v ? `${a.slice(0,-1).join(", ")+" and "+a.at(-1)}'s victory` : `${c.charAt(0).toUpperCase()+c.slice(1)}'s turn`}</span>`;
 }
