@@ -31,16 +31,6 @@ img {
   }
 }
 
-.goback {
-    background: #4a83c0;
-    padding: 10px;
-    border: 3px solid #0f355e;
-    color: white;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 2em;
-}
 
 .hodlerhodler {
     display: grid; 
@@ -83,7 +73,7 @@ img {
 }
 
 .standalone {
-    background: #e08d26;
+    background: #ff8c00;
 }
 
 .hiatus {
@@ -112,5 +102,5 @@ img.prjlegend {
 .green  { background: #107218; }
 .blue   { background: #2a2f85; }
 .grey   { background: #7a7a7a; }
-.orange { background: #e08d26; }
+.orange { background: #ff8c00; }
 .yellow { background: #e0e026; }
