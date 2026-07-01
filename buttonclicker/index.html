@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <title>Button Clicker</title>
+</head>
+<body>
+    <div id="settingsmain">
+        <h2>Settings</h2>
+        <p>placeholder</p>
+
+        <label class="switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+        </label>
+        <p> Skibidiness </p>
+
+
+        <label class="switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+        </label>
+        <p> Skibidiness </p>
+        
+        <button class="main"><img src="back-arrow.png" id="mainicon" alt="Main Icon"><p>Back to Main</p></button>
+    </div>
+
+
+    <div id="statsmain">
+        <h2>Stats</h2>
+        <p id="totalnumber">Total NUMBER: 0</p>
+        <button class="main"><img src="back-arrow.png" id="mainicon" alt="Main Icon"><p>Back to Main</p></button>
+    </div>
+
+
+    <div id="gamemain">
+        <button id="theButton" class="button">BUTTON</button>
+        <div id="separator1" class="separator"></div>
+        <div id="numberdiv">
+        <p id="clickCount">NUMBER: 0</p>
+        </div>
+        <div id="feedbackdiv"><p id="feedback"></p></div>
+        <div id="floatingnumber"><p>NUMBER: 0</p></div>
+        <div class="container">
+        <div class="col">
+            <button id="clickergain" class="button built">Click Booster <br> 50 NUMBER <br> Current Amount: 0</button>
+        </div>
+        <div class="col">
+        <button id="autoclicker" class="button built" style="display: none;">Auto Clicker <br> 500 NUMBER <br> Current Amount: 0</button>
+        </div>
+        <div class="col">
+            <p> placeholder</p>
+        </div>
+        </div>
+        <div id="separator2" class="separator"></div>
+        <div id="settingsdiv">
+            <button id="savegame" class="button" onclick="saveGame()">Save Game</button>
+            <button id="resetgame" class="button" onclick="resetGame()">Reset Game</button>
+            <button id="settings"><img src="setting.png" id="settingsicon" alt="Settings Icon"><p>Settings</p></button>
+            <button id="stats"><img src="statistics.png" id="statsicon" alt="Stats Icon"><p>Stats</p></button>
+        </div>
+    </div>
+</body>
+</html>
