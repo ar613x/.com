@@ -65,7 +65,7 @@ img {
 .old {
     background: #107218;
 }
-old a {
+.old a {
     color: #8ac3ff;
 }
 
@@ -77,7 +77,7 @@ old a {
     background: #7a7a7a;
 }
 
-abandoned a {
+.abandoned a {
     color: #8ac3ff;
 }
 
@@ -90,7 +90,7 @@ abandoned a {
     color: #000000;
 }
 
-hiatus a {
+.hiatus a {
     color: #4C83BF;
 }
 
