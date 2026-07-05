@@ -183,11 +183,24 @@ function moveWinCheck(cells) {
     }
     return false;
 }
+function boardFull(cells) {
+    for (let row of cells) {
+        for (let i of row) {
+            if (!i || !i.occ) {
+                return false;
+            }
+        }
+    }
+    return true;
+}
 function turnCheck(cells) {
     turnFlipCheck(cells);
     if (moveWinCheck(cells)) {
-        return true;
+        return 1;
     }
-    return false;
+    if (boardFull(cells)) {
+        return 2;
+    }
+    return 0;
 }
 export { Square, turnCheck };
