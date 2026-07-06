@@ -32,7 +32,22 @@ window.onclick = function(event) {
 // splash text
 const splashEl = document.getElementById("splash");
 
-const splashes = ["Now low calorie!", "Two more than one!", "Buy a watch!", "Now in 3D!", "Now with more bugs and less features!", "Watch out for Mr. Dunkin!"];
+const splashes = ["Now low calorie!",
+     "Two more than one!",
+     "Buy a watch!",
+     "Now in 3D!",
+     "Now with more bugs and less features!",
+     "Watch out for Mr. Dunkin!",
+     "Brush your teeth!",
+     "Sometimes funny!"
+     "Too school for cool!",
+     "Use the force!",
+     "Quick, hide the body!",
+     "Look who showed up!",
+     "Chicken Change!",
+     "Get an answer!",
+     "Get a question!"
+    ];
 
 function setSplash() {
   splashEl.textContent =
