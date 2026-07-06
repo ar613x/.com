@@ -153,3 +153,37 @@ img.prjlegend {
     text-decoration: none;
     cursor: pointer;
 }
+
+@keyframes splash {
+    0%, 100% {
+        transform: rotate(-20deg) scale(1);
+    }
+
+    50% {
+        transform: rotate(-20deg) scale(1.08);
+    }
+}
+
+.logo-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.logo {
+    display: block;
+}
+
+#splash {
+    position: absolute;
+    top: 10px;
+    right: -40px;
+
+    color: #ffe000;
+    font-weight: bold;
+    font-size: 20px;
+
+    transform: rotate(-20deg);
+
+    text-shadow: 2px 2px 0 #3f3f00;
+    animation: splash 0.8s ease-in-out infinite;
+}

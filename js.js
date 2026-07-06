@@ -1,5 +1,3 @@
-// variable setup
-
 
 // changelog dynamic date
 for (const el of document.querySelectorAll(".date")) {
@@ -12,6 +10,8 @@ for (const el of document.querySelectorAll(".date")) {
 
     el.textContent += ` (${days} day${days !== 1 ? "s" : ""} ago)`;
 }
+
+// ========================================================
 
 // modal 
 var modal = document.getElementById("myModal");
@@ -26,3 +26,17 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+
+// ========================================================
+
+// splash text
+const splashEl = document.getElementById("splash");
+
+const splashes = ["Now low calorie!", "Two more than one!", "Buy a Watch!", "Now in 3D!", "Now with more bugs and less features!"];
+
+function setSplash() {
+  splashEl.textContent =
+    splashes[Math.floor(Math.random() * splashes.length)];
+}
+
+setSplash();
