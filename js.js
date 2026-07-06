@@ -39,7 +39,7 @@ const splashes = ["Now low calorie!",
      "Now with more bugs and less features!",
      "Watch out for Mr. Dunkin!",
      "Brush your teeth!",
-     "Sometimes funny!"
+     "Sometimes funny!",
      "Too school for cool!",
      "Use the force!",
      "Quick, hide the body!",
