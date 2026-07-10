@@ -190,3 +190,13 @@ img.prjlegend {
     text-shadow: 2px 2px 0 #3f3f00;
     animation: splash 0.8s ease-in-out infinite;
 }
+
+#randombutton {
+    background-color: #D793DA;
+    color: white;
+    border: 3px solid #440e44;
+    padding: 30px 40px;
+    font-size: 3em;
+    cursor: pointer;
+    border-radius: 5px;
+}
