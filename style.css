@@ -1,3 +1,13 @@
+@font-face {
+    font-family: "ssedgniviSn";
+    src:
+        url("/fonts/SsegdNivisn-Regular.woff2") format("woff2"),
+        url("/fonts/SsegdNivisn-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 html, body {
     background: #440e44;
     color: white;
@@ -210,4 +220,9 @@ button {
     font-size: 3em;
     cursor: pointer;
     border-radius: 5px;
+}
+
+.ssedgniviSn {
+    font-family: "ssedgniviSn";
+    font-size: 1.5em;
 }
