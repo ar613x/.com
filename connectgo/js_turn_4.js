@@ -1,9 +1,5 @@
 import {Square, turnCheck, makeAlliance, alliances} from "./square4.js";
 window.ally = makeAlliance;
-window.setSquare = (x,y,col) => {
-    document.dispatchEvent(new CustomEvent("updateCell",{detail: {id: `${y},${x}`,color: col}}))
-};
-// import {Piece, flipPieces} from "./piece.js";
 const board = document.getElementById("board");
 const colors = ["black", "red", "white", "blue"];
 const textBorderThings = new Map([
@@ -11,7 +7,7 @@ const textBorderThings = new Map([
     ["white","black"],
     ["red","blue"],
     ["blue","white"]
-])
+]);
 let lastCell = null;
 let sturn = 0; // 0 = black, 1 = red 2 = white 3 = blue
 function updateTurnMarker(turn,v=false) {
@@ -31,6 +27,10 @@ function markLastMove(cell) {
 }
 
 let cells = [];
+window.setSquare = (x,y,col) => {
+    cells[y][x].setColor(col);
+};
+window.board = cells;
 document.addEventListener("updateCell", (event) => {
     const cell = document.getElementById(event.detail.id);
     if (!cell) return;
@@ -48,7 +48,7 @@ document.addEventListener("updateCell", (event) => {
         stone.classList.add("stone");
         cell.appendChild(stone);
     }
-
+    window.board = cells;
     stone.className = `stone ${colors[color-1]}`;
 });
 let victory = false;
