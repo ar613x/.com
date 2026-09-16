@@ -1,7 +1,12 @@
 var modal = document.getElementById("myModal");
 var span = document.getElementsByClassName("close")[0];
+var continuebtn = document.getElementById("continuebutton");
 
 span.onclick = function() {
+    modal.style.display = "none";
+}
+
+continuebtn.onclick = function() {
     modal.style.display = "none";
 }
 
