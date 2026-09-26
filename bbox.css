@@ -1,6 +1,6 @@
 form {
   --circular-range-w: 320px;
-  font-family: system-ui, sans-serif;
+  font-family: 'JetBrains Mono', monospace;
   display: grid;
   gap: 2rem;
   grid-template-columns: repeat( auto-fit, minmax(320px, 1fr) );
@@ -28,22 +28,22 @@ label {
 }
 
 .full-circle,
-.left-arc,
-.oven {
+.left-arc {
 	--circular-range-output-as: center;
 	--circular-range-output-gr: 3;
 }
 
 #total-output {
   justify-items: center;
+  font-family: 'JetBrains Mono', monospace;
   display: flex;
-  font-size: 10rem;
+  font-size: 6rem;
   width: 100%;
 }
 
 #total-div {
-  padding: 1rem;
-  border: 1px solid #fff;
+  background: #7730b1;
+  border: 4px solid #fff;
   display: grid;
   place-content: center;
 }

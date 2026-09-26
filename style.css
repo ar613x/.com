@@ -7,11 +7,18 @@
     font-style: normal;
 }
 
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/fonts/JetBrainsMono-Medium.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
 
 html, body {
     background: #9752CF;
     color: white;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'JetBrains Mono', monospace;
     font-size: 16px;
 }
 

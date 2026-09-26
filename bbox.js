@@ -515,4 +515,4 @@ for (const slider of [fullinp, leftinp, topinp, bottominp]) {
   slider.addEventListener('input', updateTotal);
 }
 
-updateTotal(); // set initial value on load
+updateTotal(); // set value on load
