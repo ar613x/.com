@@ -9,7 +9,7 @@
 
 
 html, body {
-    background: #440e44;
+    background: #9752CF;
     color: white;
     font-family: 'Courier New', Courier, monospace;
     font-size: 16px;
@@ -27,7 +27,7 @@ a {
 }
 
 .date {
-    color: #9398da;
+    color: #382247;
     font-size: 2em;
 }
 
@@ -56,7 +56,7 @@ img {
 .hodler {
     height: 200px;
     box-sizing: border-box;
-    background: #852585;
+    background: #de5fec;
     font-size: 30px;
     position: relative;
 }
