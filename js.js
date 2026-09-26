@@ -13,7 +13,7 @@ for (const el of document.querySelectorAll(".date")) {
 
 // ========================================================
 
-// splash text
+// splash text);
 const splashEl = document.getElementById("splash");
 
 const splashes = ["Now low calorie!",
@@ -33,9 +33,12 @@ const splashes = ["Now low calorie!",
      "Get a question!"
     ];
 
-function setSplash() {
-  splashEl.textContent =
-    splashes[Math.floor(Math.random() * splashes.length)];
+if (splashEl) {
+  function setSplash() {
+    splashEl.textContent =
+      splashes[Math.floor(Math.random() * splashes.length)];
+  }
+  setSplash();
 }
 
 setSplash();

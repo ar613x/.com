@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busy Box - AR613 | Ali's Corner</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bbox.css">
+<link rel="icon" type="image/x-icon" href="/icoar.ico">
+    <script src="js.js" defer></script> 
+    <script src="bbox.js" type="module" defer></script> 
+</head>
+<body>`
+    <a href="index.html"><img src="/ar613.svg" alt="AR613 Logo" class="logo"></a>
+    <form>
+      <div id="total-div"><output id="total-output">0</output></div>
+  <label id="full-circle-label">
+    <circular-range class="full-circle" aria-labelledby="full-circle-label" labels="0:0,5:5,10:10,15:15,20:20,25:25,30:30,35:35,40:40,45:45,50:50,55:55,60:60,65:65,70:70,75:75,80:80,85:85,90:90,95:95,100:0" value="50" min="0" max="100" suffix="" step="1" indices="21"></circular-range>
+  </label>
+
+  <label id="left-arc-label">
+    <circular-range class="left-arc" reverse aria-labelledby="left-arc-label" value="50" min="0" max="100" suffix="" step="10" start="180" end="360" indices="11"></circular-range>
+  </label>
+
+  <label id="top-arc-label">
+    <circular-range class="top-arc" aria-labelledby="top-arc-label" value="50" min="0" max="100" suffix="" step="1" start="270" end="450"></circular-range>
+  </label>
+
+  <label id="bottom-arc-label">
+    <circular-range class="bottom-arc" reverse aria-labelledby="bottom-arc-label" value="4" min="1" max="5" suffix="" step="1" start="165" end="195"></circular-range>
+  </label>
+</form>
+<p>Use the sliders to adjust the values. Try and find out how each affects the total!</p>
+<p>Click <a href="bboxguide.html">here</a> to ruin the fun.</p>
+<a href="projects.html">Back to Projects</a>
+</body>
+</html>
