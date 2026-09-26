@@ -29,6 +29,8 @@ const pages = [
   "wobsite/products.html",
   "wobsite/t&c.html",
   "wobsite/title.html"
+  "busybox.html"
+  "bboxguide.html"
 ];
 
 function randomPage() {
