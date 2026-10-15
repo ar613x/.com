@@ -499,7 +499,10 @@ class CircularRange extends HTMLElement {
 customElements.define('circular-range', CircularRange);
 export default CircularRange;
 
+// ================================================================
 // everything below this line is by me
+// ================================================================
+
 const fullinp = document.querySelector('.full-circle');
 const leftinp = document.querySelector('.left-arc');
 const topinp = document.querySelector('.top-arc');

@@ -8,12 +8,20 @@ for (const el of document.querySelectorAll(".date")) {
         (now - date) / (1000 * 60 * 60 * 24)
     );
 
-    el.textContent += ` (${days} day${days !== 1 ? "s" : ""} ago)`;
+    if (days >= 365) {
+        el.textContent += ` (${Math.round(days/365)} years ${Math.round((days%365)/30)} months ${days%30} day${days !== 1 ? "s" : ""} ago)`;
+    }
+    else if (days >= 30) {
+        el.textContent += ` (${Math.round(days/30)} months ${days%30} day${days !== 1 ? "s" : ""} ago)`;
+    }
+    else {
+        el.textContent += ` (${days} day${days !== 1 ? "s" : ""} ago)`;
+    }
 }
 
 // ========================================================
 
-// splash text);
+// splash text;
 const splashEl = document.getElementById("splash");
 
 const splashes = ["Now low calorie!",
