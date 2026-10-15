@@ -14,8 +14,11 @@ for (const el of document.querySelectorAll(".date")) {
     else if (days >= 30) {
         el.textContent += ` (${Math.round(days/30)} months ${days%30} day${days !== 1 ? "s" : ""} ago)`;
     }
-    else {
+    else if (days >= 1) {
         el.textContent += ` (${days} day${days !== 1 ? "s" : ""} ago)`;
+    }
+    else {
+        el.innerHTML += ` <b>(Today)</b>`;
     }
 }
 
