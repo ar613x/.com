@@ -24,14 +24,15 @@
      inkscape:deskcolor="#505050"
      inkscape:document-units="mm"
      inkscape:zoom="11.616425"
-     inkscape:cx="16.743534"
-     inkscape:cy="12.525369"
+     inkscape:cx="16.743533"
+     inkscape:cy="12.525368"
      inkscape:window-width="1536"
      inkscape:window-height="828"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer1" />
+     inkscape:current-layer="layer1"
+     showgrid="false" />
   <defs
      id="defs1" />
   <g
@@ -39,21 +40,21 @@
      inkscape:groupmode="layer"
      id="layer1">
     <rect
-       style="fill:#9653ce;fill-opacity:1;stroke:none;stroke-width:1.5;-inkscape-stroke:none"
+       style="fill:#5b2687;fill-opacity:1;stroke:none;stroke-width:1.5;-inkscape-stroke:none"
        id="rect1"
        width="4.2333336"
        height="4.2333331"
        x="0"
        y="0" />
     <rect
-       style="fill:#9653ce;fill-opacity:1;stroke:none;stroke-width:1.5;-inkscape-stroke:none"
+       style="fill:#5b2687;fill-opacity:1;stroke:none;stroke-width:1.5;-inkscape-stroke:none"
        id="rect2"
        width="4.2333336"
        height="4.2333331"
        x="4.2333331"
        y="4.2333336" />
     <rect
-       style="fill:#bb8fdf;fill-opacity:1;stroke:none;stroke-width:1.5;-inkscape-stroke:none"
+       style="fill:#3c1959;fill-opacity:1;stroke:none;stroke-width:1.5;-inkscape-stroke:none"
        id="rect3"
        width="4.2333336"
        height="4.2333331"
@@ -61,7 +62,7 @@
        y="3.0011211e-08"
        transform="rotate(-90)" />
     <rect
-       style="fill:#bb8fdf;fill-opacity:1;stroke:none;stroke-width:1.5;-inkscape-stroke:none"
+       style="fill:#3c1959;fill-opacity:1;stroke:none;stroke-width:1.5;-inkscape-stroke:none"
        id="rect4"
        width="4.2333336"
        height="4.2333331"

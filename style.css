@@ -15,12 +15,28 @@
 }
 
 
-html, body {
-    background: #9752CF;
+html {
+    background-image: url('/images/bg.svg');
+    background-size: calc(100vw / 20) calc(100vw / 20);
+    background-repeat: repeat;
+    background-position-x: 0;
+    background-position-y: 0;
     color: white;
     font-family: 'JetBrains Mono', monospace;
     font-size: 16px;
+    animation: slideHorizontal 1.5s linear infinite;
 }
+
+@keyframes slideHorizontal {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: calc((-100vw / 20)) 0px;
+  }
+}
+
+/* old bg color: #9653CE */
 
 a {
     color: #D793DA;
@@ -34,7 +50,7 @@ a {
 }
 
 .date {
-    color: #382247;
+    color: #d08dfd;
     font-size: 2em;
 }
 
@@ -44,15 +60,6 @@ img {
   object-fit: cover;
   display: block;
 }
-
-@media (min-width: 768px) {
-  .hodlerhodler {
-    max-width: 1200px; 
-    margin: 0 auto;  
-    grid-template-columns: repeat(3, 1fr); 
-  }
-}
-
 
 .hodlerhodler {
     display: grid; 
@@ -66,7 +73,14 @@ img {
     background: #de5fec;
     font-size: 30px;
     position: relative;
+    container-type: inline-size;
 }
+
+.hodler p {
+    margin-top: 0;
+    font-size: 6.9cqi;
+}
+
 .hodler a {
     color: #4a83c0;
 }
@@ -234,4 +248,21 @@ button {
     font-size: 4em;
     text-align: center;
     color: white;
+}
+
+/* blatantly stolen from buttonclicker/styles.css */
+
+#settingsicon {
+    width: 2em;
+    height: 2em;
+    position: fixed;
+    transition: rotate 0.5s ease-in-out, filter 0.5s ease-in-out;
+    top: 20px;
+    right: 20px;
+    filter: invert(0.43);
+}
+
+#settingsicon:hover {
+    rotate: 120deg;
+    filter: invert(1);
 }
